@@ -5,11 +5,16 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+const router = express.Router();
 
 // Added MongoDB OMR Mongoose
 const mongoose = require('mongoose');
 const url = "mongodb+srv://userLuke:snowBallCat@lamazondb.ao5dg.mongodb.net/LamazonDb?retryWrites=true&w=majority";
 let database;
+
+// Add session extensions
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 // Add JSON object to Populate DB
 const cartData = require('./data/sampleData/sampleCarts.json');
@@ -24,6 +29,11 @@ const initDabase = async () => {
     database = await mongoose.connect(url);
 
     if (database) {
+        app.use(session({
+            secret: 'InAmberClad',
+            store: new MongoStore({mongooseConnection: mongoose.connection})
+        }));
+        app.use(router);
         console.log("Successfuly connected to DB");
     }
     else {
@@ -52,13 +62,13 @@ const populateDb = async () => {
 const port = process.env.PORT || 8080;
 
 // routes for 1 and 2
-app.use(require('./routes/userRoutes'));
+router.use(require('./routes/userRoutes'));
 
 // routes for  3
-app.use(require('./routes/cartRoutes'));
+router.use(require('./routes/cartRoutes'));
 
 // routes for  4
-app.use(require('./routes/storeRoutes'));
+router.use(require('./routes/storeRoutes'));
 
 // Test database connection
 // populateDb(); uncomment to populate Database
