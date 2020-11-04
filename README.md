@@ -1,4 +1,4 @@
-# Namazon
+# Lamazon
 
 ## User:
 ### 1.1) GET /user/:UserId – Gets the user info given the id
