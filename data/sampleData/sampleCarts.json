@@ -1,0 +1,94 @@
+[
+  {
+    "cartItems": [
+      {
+        "storeItemId": "20",
+        "quantity": 2
+      },
+      {
+        "storeItemId": "35",
+        "quantity": 0
+      },
+      {
+        "storeItemId": "78",
+        "quantity": 1
+      },
+      {
+        "storeItemId": "30",
+        "quantity": 0
+      },
+      {
+        "storeItemId": "94",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "cartItems": [
+      {
+        "storeItemId": "62",
+        "quantity": 1
+      },
+      {
+        "storeItemId": "65",
+        "quantity": 0
+      },
+      {
+        "storeItemId": "86",
+        "quantity": 1
+      },
+      {
+        "storeItemId": "6",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "cartItems": [
+      {
+        "storeItemId": "60",
+        "quantity": 0
+      }
+    ]
+  },
+  {
+    "cartItems": [
+      {
+        "storeItemId": "79",
+        "quantity": 1
+      },
+      {
+        "storeItemId": "79",
+        "quantity": 0
+      },
+      {
+        "storeItemId": "65",
+        "quantity": 2
+      },
+      {
+        "storeItemId": "85",
+        "quantity": 2
+      },
+      {
+        "storeItemId": "31",
+        "quantity": 2
+      },
+      {
+        "storeItemId": "64",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "cartItems": [
+      {
+        "storeItemId": "98",
+        "quantity": 2
+      },
+      {
+        "storeItemId": "59",
+        "quantity": 1
+      }
+    ]
+  }
+]

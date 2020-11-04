@@ -1,0 +1,21 @@
+{
+  "name": "namazon",
+  "version": "1.0.0",
+  "description": "Project Key for milestone 1 of TXSTATE CS3320 - Jason Diaz",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.txstate.edu:jd1225/Namazon.git"
+  },
+  "author": "Jason Diaz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.11"
+  }
+}

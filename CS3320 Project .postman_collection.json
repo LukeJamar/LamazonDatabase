@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "1e8f112b-6a4f-46b8-a95c-8f12b90aed5f",
+		"name": "CS3320 Project ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/40",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jason\",\r\n    \"lastName\": \"Diaz\",\r\n    \"email\": \"jd1225@txstate.edu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/40/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"40",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"storeItemId\": 0,\r\n    \"quantity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cart/40/cartItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cart",
+						"40",
+						"cartItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/50/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"50",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/StoreItem?query=tou",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"StoreItem"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "tou"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/StoreItem/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"StoreItem",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
