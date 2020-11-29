@@ -11,6 +11,13 @@ const mongoose = require('mongoose');
 const UserModel = require('../data/UserModel');
 const CartModel = require('../data/CartModel');
 
+// JWT inclusions
+const jwt = require('jsonwebtoken');
+const accessTokenSecret = 'TheviousRacoonus';
+// JWT athentication middleware
+const authorization = require('../data/authorization');
+
+
 // Validation to enforce POSTman body is correct
 // firstName
 // lastName
@@ -23,7 +30,8 @@ const userValidators = [
 
 
 // Mongoose suplemental get ALL users
-userRouter.get('/user', async (req, res) => {
+// middleware added to log in user
+userRouter.get('/user', authorization, async (req, res) => {
     res.send(await UserModel.find());
 });
 
@@ -56,6 +64,8 @@ userRouter.post('/user', async (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
+        login: req.body.firstName + '.' + req.body.lastName,
+        password: 'password123',
         cart: await CartModel.create(newCart)
     }
     res.send(await UserModel.create(newUser));
@@ -99,5 +109,20 @@ userRouter.delete('/user/:userId/cart', async (req, res) => {
     foundCart.cartItems = [];
     res.send (await CartModel.findByIdAndUpdate(foundUser.cart, foundCart));
 });
+
+///////////////////////////////////////////////////////////
+// Secret Request
+// POST /user/login - use JWT to initiate log-in for users
+userRouter.post('/user/login', async (req, res) => {
+    const {login, password} = req.body;
+    const foundUser = await UserModel.findOne({login, password});
+
+    if (foundUser) {
+        const accessToken = jwt.sign({user:foundUser}, accessTokenSecret);
+        res.send(accessToken);
+    } else {
+        res.send(403);
+    }
+})
 
 module.exports = userRouter;

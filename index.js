@@ -17,12 +17,13 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 // Add JSON object to Populate DB
-const cartData = require('./data/sampleData/sampleCarts.json');
-const storeData = require('./data/sampleData/sampleStore.json');
-const userData = require('./data/sampleData/sampleUsers.json');
-const CartModel = require('./data/CartModel');   
-const StoreModel = require('./data/StoreModel');
-const UserModel = require('./data/UserModel');
+// No longer need to initialize
+// const cartData = require('./data/sampleData/sampleCarts.json');
+// const storeData = require('./data/sampleData/sampleStore.json');
+// const userData = require('./data/sampleData/sampleUsers.json');
+// const CartModel = require('./data/CartModel');   
+// const StoreModel = require('./data/StoreModel');
+// const UserModel = require('./data/UserModel');
 
 // Establish connection to LamazonDb
 const initDabase = async () => {
@@ -53,13 +54,15 @@ const populateDb = async () => {
     await UserModel.deleteMany({});
     
     await StoreModel.create(storeData);
-    await CartModel.create(cartData);
-    await UserModel.create(userData);
+    // Throw in Test values
+    // await CartModel.create(cartData);
+    // await UserModel.create(userData);
 
 }
 */
 
 const port = process.env.PORT || 8081;
+
 
 // routes for 1 and 2
 router.use(require('./routes/userRoutes'));
@@ -71,7 +74,7 @@ router.use(require('./routes/cartRoutes'));
 router.use(require('./routes/storeRoutes'));
 
 // Test database connection
-// populateDb(); uncomment to populate Database
+// populateDb(); // uncomment to populate Database
 initDabase();       // comment out to populate database
 
 

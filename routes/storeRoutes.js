@@ -10,8 +10,6 @@ const StoreModel = require('../data/StoreModel');
 
 // Session inclusions for StoreItems
 const session = require('express-session');
-const e = require('express');
-const MongoStore = require('connect-mongo')(session);
 
 
 ///////////////////////////////////////////////////////////
