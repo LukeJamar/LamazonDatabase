@@ -61,7 +61,7 @@ const populateDb = async () => {
 }
 */
 
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 8080;
 
 
 // routes for 1 and 2

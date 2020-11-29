@@ -27,3 +27,11 @@ curl --location --request GET 'localhost:8080/StoreItem/1'
 
 ### 4.2) GET /StoreItem?query=abc – Get all items that satisfy the regular expression query
 curl --location --request GET 'localhost:8080/StoreItem?query=tou'
+
+## Sessions:
+### GET /StoreItem/Hist/Recent?num=123 - Get previously searched items via session depending on querey number (or all in the session)
+curl --location --request GET 'localhost:8080/StoreItem/Hist/Recent?num=10'
+
+## JWT Authentication:
+### POST /user/login/ - use JWT to initiate log-in for users
+curl --location --request POST 'localhost:8080/user/login/' --header 'Content-Type: application/json' --data-raw '{"userName": "Jason.Azure", "password": "password123"}'
